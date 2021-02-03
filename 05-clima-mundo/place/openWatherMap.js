@@ -7,7 +7,7 @@ const getWatherMapCoorder = async( lat , lng ) => {
 		try {
 			
 			const instance = axios.create({
-				baseURL: `https://api.openweathermap.org/data/2.5/weather?lat=${ encodeURI( lat ) }&lon=${ encodeURI( lng ) }&appid=93b3c505c7506b9bea59da4c80a94d88`
+				baseURL: `https://api.openweathermap.org/data/2.5/weather?lat=${ encodeURI( lat ) }&lon=${ encodeURI( lng ) }&appid={key}`
 			});
 	
 			const { data, status } = await instance.get();

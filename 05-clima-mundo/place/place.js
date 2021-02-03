@@ -6,7 +6,7 @@ const getPlace = async( direccion ) => {
 
 	const instance = axios.create({
 		baseURL: `https://community-open-weather-map.p.rapidapi.com/weather?q=${ encodeUrl }`,
-		headers: {'X-rapidapi-Key': '7fce313edcmshb2486141ab984dcp135d80jsnfcfc26d9052a'}
+		headers: {'X-rapidapi-Key': '{key}'}
 	});
 
 	try {
