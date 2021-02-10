@@ -46,7 +46,7 @@ class TicketControl {
 			return 'no hay tickets';
 
 		let numeroTicket = this.tickets[0].numero;
-		console.log( numeroTicket );
+		// console.log( numeroTicket );
 		this.tickets.shift();
 
 		let atenderTicket = new Ticket( numeroTicket, escritorio );

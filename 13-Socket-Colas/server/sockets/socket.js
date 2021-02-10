@@ -12,6 +12,7 @@ io.on( 'connection', ( client ) => {
     client.emit( 'estadoActual', {
         actual: estadoActual,
         ultimos4,
+        atenderTicket: 'no hay tickets',
     } );
 
     client.on( 'atenderTicket', ( data, callback ) => {
@@ -26,6 +27,12 @@ io.on( 'connection', ( client ) => {
 
         callback( atenderTicket );
 
+        client.broadcast.emit( 'estadoActual', {
+            actual: estadoActual,
+            ultimos4,
+            atenderTicket,
+        } );
+
     } );
 
     //escuchar el cliente
@@ -35,11 +42,5 @@ io.on( 'connection', ( client ) => {
         callback( siguiente );
 
     } );
-
-
-
-    // client.on( 'disconnect', () =>{
-    //     console.log('usuario desconectado');
-    // });
 
 } );
